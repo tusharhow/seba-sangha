@@ -19,7 +19,7 @@ class _UserTypeState extends State<UserType> {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: 100,
+        height: 95,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
@@ -34,9 +34,11 @@ class _UserTypeState extends State<UserType> {
               });
               print(selectedIndex);
             },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: _buildUserType(index),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildUserType(index),
+              ],
             ),
           ),
         ),
@@ -45,27 +47,37 @@ class _UserTypeState extends State<UserType> {
   }
 
   Widget _buildUserType(int index) {
-    return Container(
-      margin: const EdgeInsets.only(right: 20),
-      height: 70,
-      width: 160,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: selectedIndex == index ? Colors.orangeAccent : Colors.white24,
-          width: 1.5,
-        ),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Center(
-        child: Text(
-          _userType[index],
-          style: TextStyle(
-            color: selectedIndex == index ? Colors.orangeAccent : Colors.white,
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Container(
+            height: 55,
+            width: 130,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: selectedIndex == index
+                    ? Colors.orangeAccent
+                    : Colors.white24,
+                width: 1.5,
+              ),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Center(
+              child: Text(
+                _userType[index],
+                style: TextStyle(
+                  color: selectedIndex == index
+                      ? Colors.orangeAccent
+                      : Colors.white,
+                  fontSize: 16.0,
+                ),
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

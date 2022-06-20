@@ -33,7 +33,12 @@ class RegistrationScreenView extends StatelessWidget {
             const SizedBox(
               height: kDefaultPadding,
             ),
-            const Center(child: UserType()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                UserType(),
+              ],
+            ),
             const SizedBox(
               height: kDefaultPadding * 2,
             ),
