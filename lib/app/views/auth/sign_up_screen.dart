@@ -93,9 +93,6 @@ class RegistrationScreenView extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
-              const SizedBox(
-                width: kDefaultPadding,
-              ),
               GestureDetector(
                 onTap: () {
                   push(context: context, widget: const LoginScreenView());

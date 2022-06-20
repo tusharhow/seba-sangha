@@ -4,14 +4,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'app/views/main/homepage.dart';
 import 'dic.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-   await Dic.setUp();
+  await Dic.setUp();
   runApp(const MyApp());
   _init();
 }
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Seba Sangha',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         canvasColor: bgColor,

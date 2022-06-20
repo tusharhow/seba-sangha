@@ -103,7 +103,10 @@ class LoginScreenView extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

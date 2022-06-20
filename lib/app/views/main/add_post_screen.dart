@@ -49,6 +49,7 @@ class AddPostScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 20,
+                      right: 20,
                     ),
                     child: TextFormField(
                       controller: addPostController.titleController,
@@ -100,6 +101,7 @@ class AddPostScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 20,
+                      right: 20,
                     ),
                     child: TextFormField(
                       maxLines: 4,
@@ -153,6 +155,7 @@ class AddPostScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 20,
+                      right: 20,
                     ),
                     child: TextFormField(
                       maxLines: 1,
@@ -204,6 +207,7 @@ class AddPostScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 20,
+                      right: 20,
                     ),
                     child: TextFormField(
                       maxLines: 1,
@@ -305,6 +309,9 @@ class AddPostScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                 ],
               ),
