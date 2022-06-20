@@ -17,25 +17,27 @@ class _UserTypeState extends State<UserType> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        itemCount: 2,
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, index) => GestureDetector(
-          onTap: () async {
-            SharedPreferences prefs = await SharedPreferences.getInstance();
-            setState(() {
-              selectedIndex = index;
-              prefs.setString("userType", _userType[index]);
-            });
-            print(selectedIndex);
-          },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: _buildUserType(index),
+    return Center(
+      child: SizedBox(
+        height: 100,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          itemCount: 2,
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (context, index) => GestureDetector(
+            onTap: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              setState(() {
+                selectedIndex = index;
+                prefs.setString("userType", _userType[index]);
+              });
+              print(selectedIndex);
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: _buildUserType(index),
+            ),
           ),
         ),
       ),

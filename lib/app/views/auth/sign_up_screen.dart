@@ -33,7 +33,7 @@ class RegistrationScreenView extends StatelessWidget {
             const SizedBox(
               height: kDefaultPadding,
             ),
-            const UserType(),
+            const Center(child: UserType()),
             const SizedBox(
               height: kDefaultPadding * 2,
             ),
@@ -92,6 +92,9 @@ class RegistrationScreenView extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 15,
                 ),
+              ),
+              const SizedBox(
+                width: 10,
               ),
               GestureDetector(
                 onTap: () {
