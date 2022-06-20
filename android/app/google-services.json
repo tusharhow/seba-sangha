@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "583360212871",
+    "project_id": "bondhu-charity",
+    "storage_bucket": "bondhu-charity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583360212871:android:2d15fc21835c4b98d22d22",
+        "android_client_info": {
+          "package_name": "com.example.bondhu_charity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583360212871-dlbv0afqag55trn1ubjif6is3vkisvoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8uYO86WKgRh97jGzHDFGK3EovR0K2HAw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583360212871-dlbv0afqag55trn1ubjif6is3vkisvoj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
