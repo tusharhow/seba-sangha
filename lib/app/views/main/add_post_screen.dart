@@ -2,7 +2,6 @@ import 'package:bondhu_charity/app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-
 import '../../controllers/post_controller.dart';
 
 class AddPostScreen extends StatelessWidget {

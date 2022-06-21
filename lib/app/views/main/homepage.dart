@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 elevation: 5,
-                                color: Colors.teal,
+                                color: Colors.indigo.shade400,
                                 child: ListTile(
                                   onTap: () {
                                     push(
@@ -94,6 +94,7 @@ class HomePage extends StatelessWidget {
                                     style: const TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
+                                      color: Colors.white,
                                     ),
                                     maxLines: 2,
                                   ),
@@ -101,7 +102,7 @@ class HomePage extends StatelessWidget {
                                     post.body.toString(),
                                     style: const TextStyle(
                                       fontSize: 15,
-                                      color: Colors.black38,
+                                      color: Colors.white70,
                                     ),
                                     maxLines: 2,
                                   ),

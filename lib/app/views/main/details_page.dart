@@ -62,19 +62,17 @@ class DetailsPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                      ),
+                      child: Text(
+                        body,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
                         ),
-                        child: Text(
-                          body,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
+                        textAlign: TextAlign.left,
                       ),
                     ),
                     const Spacer(),

@@ -5,6 +5,7 @@ import '../controllers/auth_controller.dart';
 import '../controllers/post_controller.dart';
 import '../views/main/add_post_screen.dart';
 import '../views/main/my_post_screen.dart';
+import 'about_us_alert.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({
@@ -16,7 +17,6 @@ class DrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final postController = Get.put(PostController());
     return GetBuilder<PostController>(builder: (cont) {
       return Drawer(
         child: ListView(
@@ -107,22 +107,9 @@ class DrawerWidget extends StatelessWidget {
                   )),
               onTap: () {
                 showDialog(
+                  barrierDismissible: true,
                   context: context,
-                  builder: (context) => AboutDialog(
-                    applicationIcon: Image.asset(
-                      'assets/icons/love.png',
-                      width: MediaQuery.of(context).size.width / 2.2,
-                    ),
-                    applicationName: 'Seba Sangha',
-                    children: [
-                      Text(
-                        'This is a simple app that I made to learn how to use Flutter.',
-                      ),
-                      Text(
-                        'I hope you enjoy it!',
-                      ),
-                    ],
-                  ),
+                  builder: (context) => const AboutUsAlert(),
                 );
               },
             ),
@@ -149,3 +136,4 @@ class DrawerWidget extends StatelessWidget {
     });
   }
 }
+
