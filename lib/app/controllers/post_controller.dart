@@ -8,6 +8,18 @@ class PostController extends GetxController {
   final TextEditingController bodyController = TextEditingController();
   final TextEditingController amountController = TextEditingController();
   final TextEditingController paymentMethodController = TextEditingController();
+  String? selectedMethod;
+  // dropdown
+  final List<String> paymentMethods = ['বিকাশ', 'নগদ', 'রকেট'];
+  final List<String> paymentMethodImages = [
+    'assets/icons/bkash.png',
+    'assets/icons/nagad.png',
+    'assets/icons/rocket.png'
+  ];
+  void dropdownMethod(String value) {
+    selectedMethod = value;
+    update();
+  }
 
   Future createPost() async {
     final firestore = FirebaseFirestore.instance;
@@ -16,8 +28,9 @@ class PostController extends GetxController {
       "title": titleController.text,
       "body": bodyController.text,
       "amount": amountController.text,
-      "paymentMethod": paymentMethodController.text,
+      "paymentMethodNumber": paymentMethodController.text,
       "userID": user!.uid,
+      "paymentMethod": selectedMethod,
     }).then((value) {
       Get.snackbar(
         "Success",

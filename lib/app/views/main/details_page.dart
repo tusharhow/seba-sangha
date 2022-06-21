@@ -5,17 +5,19 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 
 class DetailsPage extends StatelessWidget {
-  const DetailsPage(
-      {Key? key,
-      required this.title,
-      required this.body,
-      required this.amount,
-      required this.paymentMethod})
-      : super(key: key);
+  const DetailsPage({
+    Key? key,
+    required this.title,
+    required this.body,
+    required this.amount,
+    required this.paymentMethod,
+    required this.paymentMethodNumber,
+  }) : super(key: key);
   final String title;
   final String body;
   final String amount;
   final String paymentMethod;
+  final String paymentMethodNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -81,15 +83,15 @@ class DetailsPage extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
-                            left: kDefaultPadding + 10,
+                            left: kDefaultPadding + 5,
                             bottom: kDefaultPadding + 10,
                           ),
                           child: Row(
                             children: [
                               Text(
-                                paymentMethod,
+                                "$paymentMethod: $paymentMethodNumber",
                                 style: const TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
@@ -110,21 +112,22 @@ class DetailsPage extends StatelessWidget {
                                 icon: const Icon(
                                   Icons.copy_outlined,
                                   color: Colors.white,
-                                  size: 20,
+                                  size: 18,
                                 ),
                               ),
                             ],
                           ),
                         ),
+                        const Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(
-                            right: kDefaultPadding + 10,
+                            right: kDefaultPadding + 5,
                             bottom: kDefaultPadding + 10,
                           ),
                           child: Text(
-                            '${formatCurrency.format(int.parse(amount.toString())).replaceAll('\$', '')} টাকা',
-                            style: TextStyle(
-                              fontSize: 20,
+                            '${formatCurrency.format(int.parse(amount.toString())).replaceAll('\$', '').replaceAll('.00', '')} টাকা',
+                            style: const TextStyle(
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),

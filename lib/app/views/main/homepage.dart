@@ -84,6 +84,8 @@ class HomePage extends StatelessWidget {
                                         amount: post.amount.toString(),
                                         paymentMethod:
                                             post.paymentMethod.toString(),
+                                        paymentMethodNumber:
+                                            post.paymentMethodNumber.toString(),
                                       ),
                                     );
                                   },

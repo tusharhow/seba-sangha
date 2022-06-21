@@ -58,9 +58,13 @@ class AddPostScreen extends StatelessWidget {
                       decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white24,
-                        hintText: 'সমস্যা লিখুন',
+                        hintText: 'বাসা ভাড়া দিতে পারছি না',
                         hintStyle: TextStyle(
                           fontSize: 18,
+                          color: Colors.grey,
+                        ),
+                        counterStyle: TextStyle(
+                          fontSize: 13,
                           color: Colors.grey,
                         ),
                         focusedBorder: UnderlineInputBorder(
@@ -79,9 +83,6 @@ class AddPostScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 18,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(
@@ -108,8 +109,13 @@ class AddPostScreen extends StatelessWidget {
                       maxLength: 180,
                       controller: addPostController.bodyController,
                       decoration: InputDecoration(
-                        hintText: 'সমস্যার বিস্তারিত লিখুন',
+                        hintText:
+                            'আর্থিক অভাবে বাসা ভাড়া দিতে পারছি না। কেউ সাহায্য করলে উপকার হবে।',
                         filled: true,
+                        counterStyle: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.grey,
+                        ),
                         fillColor: Colors.white24,
                         hintStyle: const TextStyle(
                           fontSize: 18,
@@ -133,9 +139,6 @@ class AddPostScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 18,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(
@@ -163,7 +166,7 @@ class AddPostScreen extends StatelessWidget {
                       decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white24,
-                        hintText: 'টাকার পরিমান লিখুন',
+                        hintText: '৪৫০ টাকা',
                         hintStyle: TextStyle(
                           fontSize: 18,
                           color: Colors.grey,
@@ -187,7 +190,7 @@ class AddPostScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 18,
+                    height: 20,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(
@@ -209,13 +212,149 @@ class AddPostScreen extends StatelessWidget {
                       left: 20,
                       right: 20,
                     ),
+                    child: GetBuilder<PostController>(builder: (cont) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          color: Colors.white24,
+                        ),
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+                          value: cont.selectedMethod,
+                          icon: const Padding(
+                            padding: EdgeInsets.only(
+                              right: 20,
+                            ),
+                            child: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: Colors.white,
+                            ),
+                          ),
+                          iconSize: 24,
+                          elevation: 0,
+                          dropdownColor: Colors.white,
+                          underline: Container(
+                            color: Colors.transparent,
+                          ),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                          hint: const Padding(
+                            padding: EdgeInsets.only(
+                              left: 15,
+                              top: 13,
+                            ),
+                            child: Text(
+                              'সাহায্য নেওয়ার মাধ্যম',
+                              style: TextStyle(
+                                color: Colors.white54,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                          selectedItemBuilder: (context) {
+                            return cont.paymentMethods.map((String method) {
+                              return Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 15,
+                                    ),
+                                    child: Image.asset(
+                                      cont.paymentMethodImages[
+                                          cont.paymentMethods.indexOf(method)],
+                                      width: 30,
+                                      height: 30,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  DropdownMenuItem<String>(
+                                    value: method,
+                                    child: Text(
+                                      method,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }).toList();
+                          },
+                          borderRadius: BorderRadius.circular(10),
+                          onChanged: (newValue) {
+                            cont.dropdownMethod(newValue!);
+                          },
+                          items: cont.paymentMethods
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Row(
+                                children: [
+                                  Image(
+                                    image: AssetImage(cont.paymentMethodImages
+                                            .map((e) => e.toString())
+                                            .toList()[
+                                        cont.paymentMethods.indexOf(value)]),
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    value,
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                        ),
+                      );
+                    }),
+                  ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      left: 20,
+                    ),
+                    child: Text(
+                      'নাম্বার দিন',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20,
+                      right: 20,
+                    ),
                     child: TextFormField(
                       maxLines: 1,
                       controller: addPostController.paymentMethodController,
                       decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white24,
-                        hintText: 'বিকাশ - ০১৮৬৮৯৮৬৪২০',
+                        hintText: '০১৮৬৮৯৮৬৪২০',
                         hintStyle: TextStyle(
                           fontSize: 18,
                           color: Colors.grey,

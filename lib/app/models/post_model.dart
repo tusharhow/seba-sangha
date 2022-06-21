@@ -13,29 +13,33 @@ class PostModel {
       required  this.title,
       required  this.body,
       required  this.amount,
-      required  this.paymentMethod,
+      required  this.paymentMethodNumber,
       required  this.userId,
+      required  this.paymentMethod,
     });
 
     String? title;
     String ?body;
     String ?amount;
-    String ?paymentMethod;
+    String ?paymentMethodNumber;
     String ?userId;
+    String ?paymentMethod;
 
     factory PostModel.fromJson(Map<String, dynamic> json) => PostModel(
         title: json["title"],
         body: json["body"],
         amount: json["amount"],
-        paymentMethod: json["paymentMethod"].toString(),
+        paymentMethodNumber: json["paymentMethodNumber"].toString(),
         userId: json["userID"],
+        paymentMethod: json["paymentMethod"],
     );
 
     Map<String, dynamic> toJson() => {
         "title": title,
         "body": body,
         "amount": amount,
-        "paymentMethod": paymentMethod.toString(),
+        "paymentMethodNumber": paymentMethodNumber.toString(),
         "userID": userId,
+        "paymentMethod": paymentMethod,
     };
 }
