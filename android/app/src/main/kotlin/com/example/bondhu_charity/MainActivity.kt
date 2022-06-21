@@ -1,4 +1,4 @@
-package com.example.bondhu_charity
+package seba.sangha
 
 import io.flutter.embedding.android.FlutterActivity
 

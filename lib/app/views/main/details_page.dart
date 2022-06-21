@@ -33,7 +33,7 @@ class DetailsPage extends StatelessWidget {
           children: [
             Center(
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.5,
+                height: MediaQuery.of(context).size.height * 0.7,
                 width: MediaQuery.of(context).size.width / 1.05,
                 decoration: BoxDecoration(
                   color: bgColor2,
@@ -41,22 +41,20 @@ class DetailsPage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          top: 20,
-                          left: 20,
-                          right: 20,
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 20,
+                        left: 20,
+                        right: 20,
+                      ),
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
-                        child: Text(
-                          title,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
+                        textAlign: TextAlign.left,
                       ),
                     ),
                     const SizedBox(
@@ -69,7 +67,7 @@ class DetailsPage extends StatelessWidget {
                       child: Text(
                         body,
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.left,
@@ -89,7 +87,7 @@ class DetailsPage extends StatelessWidget {
                               Text(
                                 "$paymentMethod: $paymentMethodNumber",
                                 style: const TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
@@ -110,7 +108,7 @@ class DetailsPage extends StatelessWidget {
                                 icon: const Icon(
                                   Icons.copy_outlined,
                                   color: Colors.white,
-                                  size: 18,
+                                  size: 16,
                                 ),
                               ),
                             ],
@@ -125,7 +123,7 @@ class DetailsPage extends StatelessWidget {
                           child: Text(
                             '${formatCurrency.format(int.parse(amount.toString())).replaceAll('\$', '').replaceAll('.00', '')} টাকা',
                             style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
